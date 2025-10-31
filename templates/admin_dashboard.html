@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+  <h2>Admin Dashboard</h2>
+  <p>Number of Students: {{ student_count }}</p>
+  <p>Number of Subjects: {{ subject_count }}</p>
+  <p>Number of Marks Entries: {{ results_count }}</p>
+  <a class="btn btn-secondary" href="{{ url_for('list_students') }}">Manage Students</a>
+  <a class="btn btn-secondary" href="{{ url_for('list_subjects') }}">Manage Subjects</a>
+  <a class="btn btn-secondary" href="{{ url_for('add_marks') }}">Enter / Update Marks</a>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Welcome, {{ student.name }}</h2>
+  <p>Class: {{ student.student_class }}</p>
+  <p>Roll No: {{ student.roll_no }}</p>
+  <a class="btn btn-primary" href="{{ url_for('view_results') }}">View Results</a>
+  <a class="btn btn-secondary" href="{{ url_for('report_card') }}">Download Report Card (PDF)</a>
+{% endblock %}

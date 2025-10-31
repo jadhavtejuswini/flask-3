@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Results for {{ student.name }}</h2>
+  <table class="table">
+    <thead><tr><th>Subject</th><th>Marks</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for r in results %}
+        <tr>
+          <td>{{ r.subject.name if r.subject else 'Unknown' }}</td>
+          <td>{{ r.marks }}</td>
+          <td>
+            {% if r.marks >= 33 %}
+              <span class="text-success">Pass</span>
+            {% else %}
+              <span class="text-danger">Fail</span>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
